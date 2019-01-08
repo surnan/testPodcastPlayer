@@ -15,9 +15,11 @@
 		84D0C4E221E3BB80006418E6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C4E121E3BB80006418E6 /* MainTabBarController.swift */; };
 		84D0C4E621E51882006418E6 /* PodcastsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C4E521E51882006418E6 /* PodcastsSearchController.swift */; };
 		84D0C4E921E519EB006418E6 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C4E821E519EB006418E6 /* Podcast.swift */; };
+		AA2D170AF22F6BCFC9F9C748 /* Pods_tempPodCastPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44092EF7B080C59887A9E9D7 /* Pods_tempPodCastPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44092EF7B080C59887A9E9D7 /* Pods_tempPodCastPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tempPodCastPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D0C4CC21E38752006418E6 /* tempPodCastPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tempPodCastPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D0C4CF21E38752006418E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D0C4D121E38752006418E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		84D0C4E121E3BB80006418E6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		84D0C4E521E51882006418E6 /* PodcastsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsSearchController.swift; sourceTree = "<group>"; };
 		84D0C4E821E519EB006418E6 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		9853DBF45D526F772A5262C0 /* Pods-tempPodCastPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tempPodCastPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-tempPodCastPlayer/Pods-tempPodCastPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		FE63C0DD571119191884A80C /* Pods-tempPodCastPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tempPodCastPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tempPodCastPlayer/Pods-tempPodCastPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2D170AF22F6BCFC9F9C748 /* Pods_tempPodCastPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5A9D2DA10980A46631DB28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE63C0DD571119191884A80C /* Pods-tempPodCastPlayer.debug.xcconfig */,
+				9853DBF45D526F772A5262C0 /* Pods-tempPodCastPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		601645AED08752B6CA4A85D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44092EF7B080C59887A9E9D7 /* Pods_tempPodCastPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84D0C4C321E38751006418E6 = {
 			isa = PBXGroup;
 			children = (
 				84D0C4CE21E38752006418E6 /* tempPodCastPlayer */,
 				84D0C4CD21E38752006418E6 /* Products */,
+				2B5A9D2DA10980A46631DB28 /* Pods */,
+				601645AED08752B6CA4A85D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84D0C4DE21E38754006418E6 /* Build configuration list for PBXNativeTarget "tempPodCastPlayer" */;
 			buildPhases = (
+				A9833C0F73E71D07E6031F55 /* [CP] Check Pods Manifest.lock */,
 				84D0C4C821E38751006418E6 /* Sources */,
 				84D0C4C921E38751006418E6 /* Frameworks */,
 				84D0C4CA21E38751006418E6 /* Resources */,
+				D767BDBBA3D221799C9E502A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +188,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9833C0F73E71D07E6031F55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tempPodCastPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D767BDBBA3D221799C9E502A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-tempPodCastPlayer/Pods-tempPodCastPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tempPodCastPlayer/Pods-tempPodCastPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84D0C4C821E38751006418E6 /* Sources */ = {
@@ -316,6 +389,7 @@
 		};
 		84D0C4DF21E38754006418E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE63C0DD571119191884A80C /* Pods-tempPodCastPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -334,6 +408,7 @@
 		};
 		84D0C4E021E38754006418E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9853DBF45D526F772A5262C0 /* Pods-tempPodCastPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
