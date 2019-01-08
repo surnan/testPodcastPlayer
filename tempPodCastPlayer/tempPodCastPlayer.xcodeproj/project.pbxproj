@@ -13,6 +13,8 @@
 		84D0C4D721E38754006418E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D0C4D621E38754006418E6 /* Assets.xcassets */; };
 		84D0C4DA21E38754006418E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D0C4D821E38754006418E6 /* LaunchScreen.storyboard */; };
 		84D0C4E221E3BB80006418E6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C4E121E3BB80006418E6 /* MainTabBarController.swift */; };
+		84D0C4E621E51882006418E6 /* PodcastsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C4E521E51882006418E6 /* PodcastsSearchController.swift */; };
+		84D0C4E921E519EB006418E6 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C4E821E519EB006418E6 /* Podcast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		84D0C4D921E38754006418E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84D0C4DB21E38754006418E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84D0C4E121E3BB80006418E6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		84D0C4E521E51882006418E6 /* PodcastsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsSearchController.swift; sourceTree = "<group>"; };
+		84D0C4E821E519EB006418E6 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,9 @@
 		84D0C4CE21E38752006418E6 /* tempPodCastPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				84D0C4E721E519AC006418E6 /* Models */,
+				84D0C4E421E517FB006418E6 /* Controllers */,
 				84D0C4E321E3BC49006418E6 /* Support Files */,
-				84D0C4D121E38752006418E6 /* ViewController.swift */,
-				84D0C4E121E3BB80006418E6 /* MainTabBarController.swift */,
 				84D0C4DB21E38754006418E6 /* Info.plist */,
 			);
 			path = tempPodCastPlayer;
@@ -73,6 +77,24 @@
 				84D0C4D321E38752006418E6 /* Main.storyboard */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		84D0C4E421E517FB006418E6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84D0C4E121E3BB80006418E6 /* MainTabBarController.swift */,
+				84D0C4D121E38752006418E6 /* ViewController.swift */,
+				84D0C4E521E51882006418E6 /* PodcastsSearchController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84D0C4E721E519AC006418E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84D0C4E821E519EB006418E6 /* Podcast.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D0C4E621E51882006418E6 /* PodcastsSearchController.swift in Sources */,
 				84D0C4D221E38752006418E6 /* ViewController.swift in Sources */,
 				84D0C4D021E38752006418E6 /* AppDelegate.swift in Sources */,
 				84D0C4E221E3BB80006418E6 /* MainTabBarController.swift in Sources */,
+				84D0C4E921E519EB006418E6 /* Podcast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
