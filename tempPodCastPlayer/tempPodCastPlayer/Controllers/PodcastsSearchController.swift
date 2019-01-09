@@ -49,10 +49,13 @@ class PodcastsSearchController: UITableViewController,  UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
-        let url = "https://yahoo.com"
+//        let url = "https://yahoo.com"
+        
+        let url = "https://itunes.apple.com/search?term=\(searchText)"  //googled itunes API to get format
+        
         Alamofire.request(url).responseData { (dataResponse) in
             if let err = dataResponse.error {
-                print("Failed to contact yahoo \(err)")
+                print("Failed to contact itunes \(err)")
             }
             
             guard let data = dataResponse.data else {return}
