@@ -13,10 +13,7 @@ class PodcastsSearchController: UITableViewController,  UISearchBarDelegate {
     
     let cellID = "asdfasdf"
     
-    let podcasts = [
-        Podcast(name: "Lets Build That App", artistName: "Brian Voong"),
-        Podcast(name: "Some Other Blow", artistName: "SwiftCompiler Stud"),
-    ]
+    var podcasts = [Podcast]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -35,7 +32,7 @@ class PodcastsSearchController: UITableViewController,  UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         let podcast = podcasts[indexPath.row]
-        cell.textLabel?.text = "\(podcast.name)\n\(podcast.artistName)"
+        cell.textLabel?.text = "\(podcast.trackName ?? "")\n\(podcast.artistName ?? "")"
         cell.textLabel?.numberOfLines = -1
         cell.imageView?.image = #imageLiteral(resourceName: "appicon")
         return cell
@@ -48,20 +45,13 @@ class PodcastsSearchController: UITableViewController,  UISearchBarDelegate {
     //MARK:- Search Delegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-        
-//        let url = "https://yahoo.com"
-        
-        let url = "https://itunes.apple.com/search?term=\(searchText)"  //googled itunes API to get format
-        
-        Alamofire.request(url).responseData { (dataResponse) in
-            if let err = dataResponse.error {
-                print("Failed to contact itunes \(err)")
-            }
-            
-            guard let data = dataResponse.data else {return}
-            let dummyString = String(data: data, encoding: .utf8)
-            print(dummyString ?? "")
+
+        APIService.shared.fetchPodcasts(searchText: searchText) { (podcasts) in
+            self.podcasts = podcasts
+            self.tableView.reloadData()
         }
+        
+        
     }
     
     
