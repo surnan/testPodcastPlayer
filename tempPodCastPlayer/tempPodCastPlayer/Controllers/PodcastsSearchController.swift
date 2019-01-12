@@ -12,9 +12,7 @@ import Alamofire
 class PodcastsSearchController: UITableViewController,  UISearchBarDelegate {
     
     let cellID = "asdfasdf"
-    
     var podcasts = [Podcast]()
-    
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
@@ -29,29 +27,36 @@ class PodcastsSearchController: UITableViewController,  UISearchBarDelegate {
         return podcasts.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 132
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        let podcast = podcasts[indexPath.row]
-        cell.textLabel?.text = "\(podcast.trackName ?? "")\n\(podcast.artistName ?? "")"
-        cell.textLabel?.numberOfLines = -1
-        cell.imageView?.image = #imageLiteral(resourceName: "appicon")
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! PodcastCell
+        
+        cell.podcast = podcasts[indexPath.row]
+        
+        
+//        let podcast = podcasts[indexPath.row]
+//        cell.textLabel?.text = "\(podcast.trackName ?? "")\n\(podcast.artistName ?? "")"
+//        cell.textLabel?.numberOfLines = -1
+//        cell.imageView?.image = #imageLiteral(resourceName: "appicon")
         return cell
     }
     
     fileprivate func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        let nib = UINib(nibName: "PodcastCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cellID)
     }
     
     //MARK:- Search Delegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-
         APIService.shared.fetchPodcasts(searchText: searchText) { (podcasts) in
             self.podcasts = podcasts
             self.tableView.reloadData()
         }
-        
-        
     }
     
     
