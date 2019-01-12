@@ -11,6 +11,9 @@ import UIKit
 struct Podcast: Decodable {
     var trackName: String?
     var artistName: String?
+    var artworkUrl600: String?
+    var trackCount: Int?
+    var feeduRL: String?
 }
 
 /*  Decodable Protocol needed because this struct is a member of: 'SearchResults:Decodable' in PodcastsSearchController

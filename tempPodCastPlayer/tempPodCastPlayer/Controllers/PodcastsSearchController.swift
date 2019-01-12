@@ -23,6 +23,21 @@ class PodcastsSearchController: UITableViewController,  UISearchBarDelegate {
     
     
     //MARK:- TableView
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "Please Enter a Search Term"
+        
+        label.attributedText = NSAttributedString(string: "Please Enter a Search Term", attributes: [NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 25)!,NSAttributedString.Key.foregroundColor : UIColor.purple,])
+        label.textAlignment = .center
+        return label
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return  podcasts.count == 0 ? 150 : 0
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podcasts.count
     }
@@ -46,6 +61,7 @@ class PodcastsSearchController: UITableViewController,  UISearchBarDelegate {
     
     fileprivate func setupTableView() {
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.tableFooterView = UIView()    //Get rid of row divider lines
         let nib = UINib(nibName: "PodcastCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellID)
     }
